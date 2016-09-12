@@ -5,7 +5,19 @@
     <table>
       <tr><th>City</th><th>Favourite Beer Type</th><tr>
       <tr><td>Cologne</td><td>Kölsch</td><tr>
+        <% data.each do |beer| %>
+        <tr><td><%= beer[:region] %></td><td><%= beer[:brand] %></td><tr>
+        <% end %>
     </table>
+
+    <form method="post" action="/create">
+      Region:<br>
+      <input type="text" name="region"><br>
+      Type:<br>
+      <input type="text" name="brand">
+      <br>
+      <input type="submit"/>
+    </form>
 
     <small>IP: Served from cf instance <%= index %></small>
   </body>
